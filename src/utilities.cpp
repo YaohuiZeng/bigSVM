@@ -15,30 +15,6 @@ int sum(int *x, int n) {
   return sum;
 }
 
-// TODO: fix bugs with template function
-// template<typename T>
-// T sum(T *x, int n) {
-//   T result = 0;
-//   for (int i = 0; i < n; i++) {
-//     result = result + x[i];
-//   }
-//   return result;
-// }
-
-// crossprod of columns X_j and X_k
-template<typename T, typename BMAccessorType>
-double crossprod_bm_Xj_Xk(BigMatrix *xMat, IntegerVector& row_idx, int n, int j, int k) {
-  BMAccessorType xAcc(*xMat);
-  T *xCol_j = xAcc[j];
-  T *xCol_k = xAcc[k];
-  double sum_xj_xk = 0.0;
-  
-  for (int i = 0; i < n; i++) {
-    sum_xj_xk += xCol_j[row_idx[i]] * xCol_k[row_idx[i]];
-  }
-  return sum_xj_xk;
-}
-
 
 // [[Rcpp::export]] 
 NumericVector crossprod_bm(SEXP X_, SEXP y_, SEXP row_idx_) {
@@ -75,6 +51,4 @@ NumericVector crossprod_bm(SEXP X_, SEXP y_, SEXP row_idx_) {
   
   return res;
 }
-
-
 

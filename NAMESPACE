@@ -1,0 +1,7 @@
+
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+import(bigmemory)
+import(Matrix)
+
+useDynLib(bigSVM,.registration=TRUE)

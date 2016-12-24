@@ -1,7 +1,17 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
 src/*.o
 src/*.so
 src/*.dll
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.Ruserdata
+# Example code in package build process
+*-Ex.R
+
+# Mac file
+.DS_Store
+.Rproj.user

@@ -2,16 +2,17 @@ Package: bigSVM
 Type: Package
 Title: Solution Paths of Sparse Support Vector Machine with Lasso or Elastic-Net 
     Regularization For Big Data in R
-Version: 1.0-1
-Date: 2016-12-23
+Version: 0.0-2
+Date: 2017-04-07
 Author: Yaohui Zeng [aut,cre], Congrui Yi [ctb]
-Maintainer: Yaohui Zeng <yaohui-zeng at uiowa.edu>
+Maintainer: Yaohui Zeng <yaohui-zeng@uiowa.edu>
 Description: Fast algorithm for fitting solution paths of sparse linear SVM with 
     lasso or elastic-net regularization to generate sparse solutions and extend 
     model fitting with big data that cannot be fully loaded into main memory.
 License: GPL-3
 Depends: bigmemory (>= 4.0.0), Matrix
-Imports: Rcpp (>= 0.12.1), methods
+Imports: Rcpp (>= 0.12.1)
 LinkingTo: Rcpp, RcppArmadillo, bigmemory, BH
 VignetteBuilder: R.rsp
 Suggests: parallel, R.rsp
+RoxygenNote: 6.0.1

@@ -7,14 +7,13 @@ double sign(double x) {
   else return 0.0;
 }
 
-int sum(int *x, int n) {
-  int sum = 0;
-  for (int j = 0; j < n; j++) {
-    sum += x[j];
-  }
-  return sum;
-}
-
+// int sum(IntegerVector x, int n) {
+//   int sum = 0;
+//   for (int j = 0; j < n; j++) {
+//     sum += x[j];
+//   }
+//   return sum;
+// }
 
 // [[Rcpp::export]] 
 NumericVector crossprod_bm(SEXP X_, SEXP y_, SEXP row_idx_) {
@@ -51,4 +50,3 @@ NumericVector crossprod_bm(SEXP X_, SEXP y_, SEXP row_idx_) {
   
   return res;
 }
-

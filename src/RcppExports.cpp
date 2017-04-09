@@ -6,6 +6,32 @@
 
 using namespace Rcpp;
 
+// big_svm
+List big_svm(SEXP X_, SEXP y_, SEXP row_idx_, SEXP lambda_, SEXP nlambda_, SEXP lambda_min_, SEXP pf_, SEXP gamma_, SEXP alpha_, SEXP thresh_, SEXP ppflag_, SEXP scrflag_, SEXP dfmax_, SEXP max_iter_, SEXP user_, SEXP message_);
+RcppExport SEXP bigSVM_big_svm(SEXP X_SEXP, SEXP y_SEXP, SEXP row_idx_SEXP, SEXP lambda_SEXP, SEXP nlambda_SEXP, SEXP lambda_min_SEXP, SEXP pf_SEXP, SEXP gamma_SEXP, SEXP alpha_SEXP, SEXP thresh_SEXP, SEXP ppflag_SEXP, SEXP scrflag_SEXP, SEXP dfmax_SEXP, SEXP max_iter_SEXP, SEXP user_SEXP, SEXP message_SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type X_(X_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type y_(y_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type row_idx_(row_idx_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type lambda_(lambda_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type nlambda_(nlambda_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type lambda_min_(lambda_min_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type pf_(pf_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type gamma_(gamma_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type alpha_(alpha_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type thresh_(thresh_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type ppflag_(ppflag_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type scrflag_(scrflag_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type dfmax_(dfmax_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type max_iter_(max_iter_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type user_(user_SEXP);
+    Rcpp::traits::input_parameter< SEXP >::type message_(message_SEXP);
+    rcpp_result_gen = Rcpp::wrap(big_svm(X_, y_, row_idx_, lambda_, nlambda_, lambda_min_, pf_, gamma_, alpha_, thresh_, ppflag_, scrflag_, dfmax_, max_iter_, user_, message_));
+    return rcpp_result_gen;
+END_RCPP
+}
 // crossprod_bm
 NumericVector crossprod_bm(SEXP X_, SEXP y_, SEXP row_idx_);
 RcppExport SEXP bigSVM_crossprod_bm(SEXP X_SEXP, SEXP y_SEXP, SEXP row_idx_SEXP) {

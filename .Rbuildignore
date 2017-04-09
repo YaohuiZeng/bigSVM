@@ -1,3 +1,9 @@
+.git
+.gitignore
+.Rbuildignore
+.Rhistory
+.DS_Store
+test*
 ^.*\.Rproj$
 ^\.Rproj\.user$
-test_bigSVM
+^\.travis\.yml$

@@ -127,20 +127,35 @@ bigSVM <- function (X, y, row.idx = 1:nrow(X), alpha = 1, gamma = 0.1, nlambda=1
                  as.integer(scrflag), as.integer(dfmax), as.integer(max.iter),
                  as.integer(user), as.integer(message));
 
-  shift <- fit[[1]]
-  scale <- fit[[2]]
-  sx_pos <- fit[[3]]
-  sx_neg <- fit[[4]]
-  syx <- fit[[5]]
-  nonconst <- fit[[6]]
+  intercept <- fit[[1]]
+  weights <- fit[[2]]
+  iter <- fit[[3]]
+  lambda <- fit[[4]]
+  saturated <- fit[[5]]
+  shift <- fit[[6]]
+  scale <- fit[[7]]
+  nonconst <- fit[[8]]
 
+  # Remove saturated lambda values
+  ind <- !is.na(iter)
+  intercept <- intercept[ind]
+  weights <- weights[, ind, drop = FALSE]
+  iter <- iter[ind]
+  lambda <- lambda[ind]
+  
   # Output
   structure(list(call = call,
+                 intercept = intercept,
+                 weights = weights,
+                 iter = iter,
+                 lambda = lambda,
+                 saturated = saturated,
                  shift = shift,
                  scale = scale,
-                 sx_pos = sx_pos,
-                 sx_neg = sx_neg,
-                 syx = syx,
-                 nonconst = nonconst),
+                 nonconst = nonconst,
+                 alpha = alpha,
+                 gamma = gamma,
+                 penalty.factor = penalty.factor
+                 ),
             class = c("bigSVM"))
 }

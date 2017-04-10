@@ -21,6 +21,6 @@ x.bm3 <- as.big.matrix(x, type = 'integer')
 y <- sample(c(1, -1), n, replace = T)
 ## test bigsvm
 bigSVM(x.bm1, y)
-bigSVM(x.bm2, y)
-bigSVM(x.bm3, y)
+# bigSVM(x.bm2, y)
+# bigSVM(x.bm3, y)
 

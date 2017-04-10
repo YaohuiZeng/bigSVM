@@ -23,7 +23,6 @@
 #' @importFrom grDevices hcl
 #' @importFrom Rcpp evalCpp
 #' @export bigSVM 
-#' @export crossprod_bm
 #'
 #' @author Yaohui Zeng and Congrui Yi
 #' @keywords models classification machine learning SVM

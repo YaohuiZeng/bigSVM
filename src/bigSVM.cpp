@@ -27,7 +27,7 @@ List big_svm(BigMatrix *xMat, const NumericVector &y, const IntegerVector &row_i
   BMAccessorType xAcc(*xMat);  
   T *xCol;
   
-  int i, j, k, l, lstart, lp, jn, num_pos, converged, mismatch, nnzero = 0, violations = 0, nv = 0;
+  int i, j, k, l, lstart, lp, jn, num_pos = 0, converged, mismatch, nnzero = 0, violations = 0, nv = 0;
   double gi = 1.0 / gamma, cmax, cmin, csum_pos, csum_neg, csum, pct, lstep, ldiff, lmax, l1, l2, v1, v2, v3, tmp, xtmp, change, max_update, update, cutoff, scrfactor = 1.0;  
   
   // double *x2 = Calloc(n*p, double); // x^2
@@ -36,7 +36,7 @@ List big_svm(BigMatrix *xMat, const NumericVector &y, const IntegerVector &row_i
   NumericVector sx_pos(p); // column sum of x where y = 1
   NumericVector sx_neg(p); // column sum of x where y = -1
   NumericVector syx(p); // column sum of yx
-  double sx_pos_int, sx_neg_int, syx_int; // for intercept
+  double sx_pos_int, sx_neg_int, syx_int = 0.0; // for intercept
   
   arma::sp_mat w = arma::sp_mat(p, L); // w without intercept
   NumericVector w0(L); // intercept
